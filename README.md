@@ -4,4 +4,4 @@ Softdev hw
 ##Art Squad
 Sally Bao, Loren Maggiore
 
-Bouncy balls using svg and closures
+Bouncy balls using svg and closures.
