@@ -11,7 +11,7 @@ var width = 1000;
 var height = 1000;
 
 var balls = [];
-var colors = ["red", "green", "blue"];
+var colors = ["red", "green", "blue", "yellow", "black", "white", "pink", "purple", "orange", "brown" ];
 
 var randomize = function(lower, upper){
     return Math.floor(Math.random() * (upper - lower) + lower);
@@ -86,11 +86,14 @@ var Ball = function(){
 var requestId;
 var animate = function(){
     var i, j;
+    balls = balls.map(function(ball){
+	ball.move();
+	return ball;
+    });
+
     for(i = 0; i < balls.length; i++){
-	balls[i].move();
-	for (j = 0; j < balls.length; j++){
-	    if (i != j)
-		balls[i].collidesWith(balls[j]);
+	for (j = i + 1; j < balls.length; j++){
+	    balls[i].collidesWith(balls[j]);
 	}
 	//balls[i].move();
     }
